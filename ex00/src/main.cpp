@@ -6,13 +6,13 @@
 /*   By: jose-gon <jose-gon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 09:50:41 by jose-gon          #+#    #+#             */
-/*   Updated: 2025/05/19 21:55:17 by jose-gon         ###   ########.fr       */
+/*   Updated: 2025/05/20 19:02:28 by jose-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Bureaucrat.hpp>
 
-int main() 
+int main()
 {
     std::cout << "== Creando burócratas válidos ==" << std::endl;
     Bureaucrat a("Alice", 42);

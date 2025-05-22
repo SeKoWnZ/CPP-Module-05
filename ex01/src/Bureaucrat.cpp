@@ -6,7 +6,7 @@
 /*   By: jose-gon <jose-gon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 19:35:19 by jose-gon          #+#    #+#             */
-/*   Updated: 2025/05/21 19:37:47 by jose-gon         ###   ########.fr       */
+/*   Updated: 2025/05/22 22:05:19 by jose-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,29 +25,15 @@ Bureaucrat::Bureaucrat(std::string str, int val) : _name(str)
 	else
 		_grade = val;
 }
-	// try
-	// {
-	// 	if (val < 1)
-	// 		Bureaucrat::GradeTooHighException();
-	// 	else if (val > 150)
-	// 		Bureaucrat::GradeTooLowException();
-	// 	else
-	// 		_grade = val;
-	// }
-	// catch (std::exception & e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// 	_grade = 150;
-	// }
-// }
 
-Bureaucrat::Bureaucrat(Bureaucrat const& source) : _name(source._name)
+Bureaucrat::Bureaucrat(Bureaucrat const& source)
 {
 	*this = source;
 }
 
 Bureaucrat& Bureaucrat::operator=(Bureaucrat const& source) {
-	if (this != &source) {
+	if (this != &source)
+	{
 		this->_grade = source._grade;
 	}
 	return *this;
@@ -61,7 +47,6 @@ std::ostream& operator<<(std::ostream& os, Bureaucrat const& source)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "DESTROYING: " << _name << std::endl;
 }
 
 std::string const& Bureaucrat::getName() const
@@ -100,5 +85,18 @@ void Bureaucrat::decrementGrade()
 	catch (std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::signForm(Form& source)
+{
+	try
+	{
+		source.beSigned(*this);
+		std::cout << _name << " signed " << source.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		 std::cout << _name << " couldn's sign " << source.getName() << " because " << e.what() << std::endl;
 	}
 }
