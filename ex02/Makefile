@@ -6,11 +6,11 @@
 #    By: jose-gon <jose-gon@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/29 20:27:42 by jose-gon          #+#    #+#              #
-#    Updated: 2025/05/26 17:44:37 by jose-gon         ###   ########.fr        #
+#    Updated: 2025/06/03 18:32:41 by jose-gon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = youNeed
+NAME = Forms
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -18,7 +18,8 @@ SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = ./include
 
-FILES = main.cpp Bureaucrat.cpp Form.cpp
+FILES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp \
+PresidentialPardonForm.cpp
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(FILES:.cpp=.o))
 
 all : $(NAME)
